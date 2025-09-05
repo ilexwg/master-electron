@@ -1,5 +1,10 @@
 // Modules
 const { app, BrowserWindow } = require('electron');
+const bcrypt = require('bcrypt');
+
+bcrypt.hash('abcd', 10, function (err, hash) {
+  console.log(hash);
+});
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -8,7 +13,7 @@ let mainWindow;
 // Create a new BrowserWindow when `app` is ready
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1600,
+    width: 1000,
     height: 800,
     webPreferences: {
       // --- !! IMPORTANT !! ---
